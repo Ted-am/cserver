@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EtherCAT Motor Control</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Управление мотором</h1>
+    <div class="controls">
+      <button id="arrow-left" class="arrow" aria-label="Влево">&#8592;</button>
+      <div class="fields">
+        <label>
+          Угол (рад)
+          <input type="number" id="angle" step="0.001" value="0" />
+        </label>
+        <label>
+          Скорость (рад/с)
+          <input type="number" id="speed" step="0.001" value="0" />
+        </label>
+      </div>
+      <button id="arrow-right" class="arrow" aria-label="Вправо">&#8594;</button>
+    </div>
+    <button id="start" class="start">Пуск</button>
+  </div>
+  <script>
+    const angle = document.getElementById('angle');
+    const speed = document.getElementById('speed');
+    const left = document.getElementById('arrow-left');
+    const right = document.getElementById('arrow-right');
+    const startBtn = document.getElementById('start');
+
+    left.addEventListener('click', () => {
+      angle.value = (parseFloat(angle.value || '0') - 0.1).toFixed(3);
+    });
+    right.addEventListener('click', () => {
+      angle.value = (parseFloat(angle.value || '0') + 0.1).toFixed(3);
+    });
+    startBtn.addEventListener('click', async () => {
+      // Заглушка: можно отправить POST на /api/start позже
+      startBtn.disabled = true;
+      setTimeout(() => (startBtn.disabled = false), 500);
+      alert('Команда пуск отправлена (заглушка)');
+    });
+  </script>
+</body>
+</html>
+
+

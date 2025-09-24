@@ -1,0 +1,39 @@
+# Build artifacts
+/build/
+/out/
+/bin/
+/obj/
+*.obj
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.log
+*.cache
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.vcxproj*
+*.sln
+
+# Visual Studio
+.vs/
+*.user
+*.opendb
+*.tlog
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+
